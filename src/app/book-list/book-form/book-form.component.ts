@@ -28,8 +28,7 @@ export class BookFormComponent implements OnInit {
   	this.bookForm = this.formBuilder.group({
   		title: ['', Validators.required],
   		author: ['', Validators.required],
-  		synopsis: '',
-      photo: ''
+  		synopsis: ''
   	});
   }
 
@@ -39,6 +38,7 @@ export class BookFormComponent implements OnInit {
   	const synopsis = this.bookForm.get('synopsis').value;
   	const newBook = new Book(title, author);
   	newBook.synopsis = synopsis;
+    console.log('file url' + this.fileURL);
     if(this.fileURL && this.fileURL !== ''){
       newBook.photo = this.fileURL;
     }
@@ -54,8 +54,9 @@ export class BookFormComponent implements OnInit {
         this.fileURL = url;
         this.fileIsUploading = false;
         this.fileUploaded = true;
+        console.log(this.fileURL);
       }
-    )
+    );
   }
 
   detectFiles(event){
