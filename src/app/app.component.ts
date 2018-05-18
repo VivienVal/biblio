@@ -13,7 +13,7 @@ export class AppComponent {
 		    authDomain: "biblio-31040.firebaseapp.com",
 		    databaseURL: "https://biblio-31040.firebaseio.com",
 		    projectId: "biblio-31040",
-		    storageBucket: "",
+		    storageBucket: "gs://biblio-31040.appspot.com",
 		    messagingSenderId: "679495257825"
 	  	};
 	  	firebase.initializeApp(config);
